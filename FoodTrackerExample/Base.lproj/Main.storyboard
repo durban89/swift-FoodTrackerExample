@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Db1-aj-JHy">
-                                <rect key="frame" x="16" y="40" width="343" height="423.5"/>
+                                <rect key="frame" x="16" y="40" width="343" height="467.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKf-US-xNI">
                                         <rect key="frame" x="0.0" y="0.0" width="86.5" height="20.5"/>
@@ -54,30 +54,24 @@
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="4ww-cQ-GAQ" appends="YES" id="fJF-oz-VV6"/>
                                             <outletCollection property="gestureRecognizers" destination="4ww-cQ-GAQ" appends="YES" id="MSE-HY-20q"/>
-                                            <outletCollection property="gestureRecognizers" destination="4ww-cQ-GAQ" appends="YES" id="3EH-hm-lyg"/>
                                         </connections>
                                     </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Sf-ff-0zE" customClass="RatingControlView" customModule="FoodTrackerExample" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="423.5" width="252" height="44"/>
+                                    </stackView>
                                 </subviews>
-                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="TcP-OH-KDa" secondAttribute="trailing" id="JjO-Ri-hnJ"/>
                                     <constraint firstAttribute="trailing" secondItem="3UB-Cl-4cp" secondAttribute="trailing" id="gbH-ow-2XB"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="4ww-cQ-GAQ" appends="YES" id="qSy-Uo-ZC1"/>
-                                </connections>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Db1-aj-JHy" secondAttribute="trailing" id="F4f-p0-CgJ"/>
                             <constraint firstItem="Db1-aj-JHy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="LZt-wq-6yc"/>
                             <constraint firstItem="Db1-aj-JHy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YeU-c3-wQU"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="4ww-cQ-GAQ" appends="YES" id="owv-Fr-3eU"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="mealNameLabel" destination="IKf-US-xNI" id="3rR-Ku-Mxa"/>
