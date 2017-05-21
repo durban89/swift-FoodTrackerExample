@@ -61,6 +61,27 @@ import UIKit
     // MARK: Private Methods
     private func updateButtons(){
         for (index, button) in ratingButtons.enumerated(){
+            let hintString:String?
+            if rating == index + 1 {
+                hintString = "Tap tp reset the rating to zero"
+            } else {
+                hintString = nil
+            }
+            
+            // Calculate the value string
+            let valueString:String
+            switch rating {
+            case 0:
+                valueString = "No rating set."
+            case 1:
+                valueString = "1 star set."
+            default:
+                valueString = "\(rating) stars set."
+            }
+            
+            // Assign the hint string and value string
+            button.accessibilityHint = hintString
+            button.accessibilityValue = valueString
             button.isSelected = index < rating
         }
     }

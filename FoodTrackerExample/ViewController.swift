@@ -14,6 +14,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
     @IBOutlet weak var mealNameLabel: UILabel!
     @IBOutlet weak var mealNameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var ratingControlView: RatingControlView!
     
     
     override func viewDidLoad() {
@@ -62,9 +63,9 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
 //        fatalError("Expected a dictionary containing an image, but was provided the following")
     }
     
-    @IBAction func setDefaultLabelText(_ sender: UIButton) {
-        mealNameLabel.text = "Default Text";
-    }
+//    @IBAction func setDefaultLabelText(_ sender: UIButton) {
+//        mealNameLabel.text = "Default Text";
+//    }
     
     
     // MARK: UITextFieldDelegate
@@ -76,6 +77,10 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         mealNameLabel.text = textField.text;
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.becomeFirstResponder()
     }
 
 }
