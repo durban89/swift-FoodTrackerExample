@@ -38,7 +38,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="TcP-OH-KDa">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="TcP-OH-KDa">
                                         <rect key="frame" x="0.0" y="70.5" width="343" height="343"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -46,7 +46,6 @@
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="4ww-cQ-GAQ" appends="YES" id="fJF-oz-VV6"/>
-                                            <outletCollection property="gestureRecognizers" destination="4ww-cQ-GAQ" appends="YES" id="MSE-HY-20q"/>
                                         </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Sf-ff-0zE" customClass="RatingControlView" customModule="FoodTrackerExample" customModuleProvider="target">

@@ -47,7 +47,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
     
     // MARK: Actions
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
-        
+
         // Hide the keyword
         mealNameTextField.resignFirstResponder()
         
