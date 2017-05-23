@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class MealViewController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
@@ -15,19 +16,22 @@ class MealViewController: UIViewController,UITextFieldDelegate,UIImagePickerCont
     @IBOutlet weak var mealNameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControlView: RatingControlView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    /*
+     This value is either passed by `MealTableViewController` in `prepare(for:sender:)`
+     or constructed as part of adding a new meal.
+     */
+    var meal:MealModel?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        // Handle text filed's user input through delegate callbacks
 //        mealNameTextField.delegate = self;
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: UIImagePickerControllerDelegate
@@ -45,6 +49,23 @@ class MealViewController: UIViewController,UITextFieldDelegate,UIImagePickerCont
         dismiss(animated: true, completion: nil)
     }
     
+    // MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        // Configure the destination view controller only when the save button is pressed.
+        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+            os_log("The save button was not pressed, cancelling", log:OSLog.default, type: .debug)
+            return
+        }
+        
+        let name = mealNameTextField.text ?? ""
+        let photo = photoImageView.image
+        let rating = ratingControlView.rating
+        
+        meal = MealModel(name: name, photo: photo, rating: rating)
+        
+    }
+    
     // MARK: Actions
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
 
@@ -60,7 +81,6 @@ class MealViewController: UIViewController,UITextFieldDelegate,UIImagePickerCont
         // Make sure Viewcontroller is notified when the user picks an image
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
-//        fatalError("Expected a dictionary containing an image, but was provided the following")
     }
     
 //    @IBAction func setDefaultLabelText(_ sender: UIButton) {
