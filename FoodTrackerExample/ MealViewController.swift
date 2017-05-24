@@ -28,6 +28,14 @@ class MealViewController: UIViewController,UITextFieldDelegate,UIImagePickerCont
     override func viewDidLoad() {
         super.viewDidLoad()
         mealNameTextField.delegate = self;
+        
+        if let meal = meal {
+            navigationItem.title = meal.name
+            mealNameTextField.text = meal.name
+            photoImageView.image = meal.photo
+            ratingControlView.rating = meal.rating
+        }
+        
         updateSaveButtonState()
     }
 
@@ -68,9 +76,15 @@ class MealViewController: UIViewController,UITextFieldDelegate,UIImagePickerCont
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        if isPresentingInAddMealMode{
+            dismiss(animated: true, completion: nil)
+        } else if let owningNavigationController = navigationController {
+            owningNavigationController.popViewController(animated: true)
+        } else {
+            fatalError("The MealViewController is not inside a navigation controller.")
+        }
     }
-    
     
     // MARK: Actions
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
