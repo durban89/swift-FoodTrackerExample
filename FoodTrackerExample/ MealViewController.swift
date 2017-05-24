@@ -27,7 +27,8 @@ class MealViewController: UIViewController,UITextFieldDelegate,UIImagePickerCont
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        mealNameTextField.delegate = self;
+        mealNameTextField.delegate = self;
+        updateSaveButtonState()
     }
 
     override func didReceiveMemoryWarning() {
@@ -97,11 +98,23 @@ class MealViewController: UIViewController,UITextFieldDelegate,UIImagePickerCont
     
     func textFieldDidEndEditing(_ textField: UITextField) {
 //        mealNameLabel.text = textField.text;
+        os_log("DidEndEditing")
+        updateSaveButtonState()
+        navigationItem.title = textField.text
     }
     
-//    func textFieldDidBeginEditing(_ textField: UITextField) {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
 //        textField.becomeFirstResponder()
-//    }
+        // Disable the save button while editing
+        saveButton.isEnabled = false
+    }
+    
+    // MARK: Private Methods
+    private func updateSaveButtonState(){
+        // Disable the Save Button if the text field is empty.
+        let text = mealNameTextField.text ?? ""
+        saveButton.isEnabled = !text.isEmpty
+    }
 
 }
 
