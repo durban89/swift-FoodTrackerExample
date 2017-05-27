@@ -82,32 +82,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Db1-aj-JHy">
-                                <rect key="frame" x="16" y="84" width="343" height="443"/>
+                                <rect key="frame" x="16" y="84" width="343" height="424"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Meal Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3UB-Cl-4cp">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="cRJ-qn-3Jm"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="TcP-OH-KDa">
-                                        <rect key="frame" x="0.0" y="46" width="343" height="343"/>
+                                        <rect key="frame" x="11.5" y="50" width="320" height="320"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="TcP-OH-KDa" secondAttribute="height" multiplier="1:1" id="dSp-wi-weW"/>
+                                            <constraint firstAttribute="width" secondItem="TcP-OH-KDa" secondAttribute="height" multiplier="1:1" id="62K-Pa-VC2"/>
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="4ww-cQ-GAQ" appends="YES" id="fJF-oz-VV6"/>
                                         </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Sf-ff-0zE" customClass="RatingControlView" customModule="FoodTrackerExample" customModuleProvider="target">
-                                        <rect key="frame" x="45.5" y="399" width="252" height="44"/>
+                                        <rect key="frame" x="45.5" y="380" width="252" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="5Sf-ff-0zE" secondAttribute="height" multiplier="252:44" id="u2m-cd-D1y"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="TcP-OH-KDa" firstAttribute="top" secondItem="3UB-Cl-4cp" secondAttribute="bottom" constant="10" id="1Sr-DP-zaO"/>
-                                    <constraint firstItem="TcP-OH-KDa" firstAttribute="top" secondItem="3UB-Cl-4cp" secondAttribute="bottom" constant="10" id="3Yb-XF-1dq"/>
-                                    <constraint firstAttribute="trailing" secondItem="TcP-OH-KDa" secondAttribute="trailing" id="JjO-Ri-hnJ"/>
                                     <constraint firstAttribute="trailing" secondItem="3UB-Cl-4cp" secondAttribute="trailing" id="gbH-ow-2XB"/>
                                     <constraint firstItem="5Sf-ff-0zE" firstAttribute="leading" secondItem="Db1-aj-JHy" secondAttribute="leading" constant="46" id="pU0-oH-JNa"/>
                                 </constraints>
@@ -116,9 +119,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Db1-aj-JHy" secondAttribute="trailing" id="F4f-p0-CgJ"/>
-                            <constraint firstItem="Db1-aj-JHy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="LZt-wq-6yc"/>
+                            <constraint firstItem="Db1-aj-JHy" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="KrT-cK-imb"/>
                             <constraint firstItem="Db1-aj-JHy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YeU-c3-wQU"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Db1-aj-JHy" secondAttribute="bottom" constant="140" id="eX0-so-QQ4"/>
+                            <constraint firstItem="Db1-aj-JHy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="eCj-a8-GJg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Meal" id="ikc-q7-LGE">
@@ -185,6 +188,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MZn-qv-hcs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1095" y="625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jpb-fW-8hU">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X85-ic-yTS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xdl-WJ-MHe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iIK-QD-FxN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="2882.4000000000001" y="824.43778110944538"/>
         </scene>
     </scenes>
     <resources>
