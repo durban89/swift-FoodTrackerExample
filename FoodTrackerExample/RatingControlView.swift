@@ -115,6 +115,7 @@ import UIKit
             button.heightAnchor.constraint(equalToConstant: startSize.height).isActive = true
             button.widthAnchor.constraint(equalToConstant: startSize.width).isActive = true
             
+            
             // Set the Accessibility Label
             button.accessibilityLabel = "Set \(index + 1) star rating"
             

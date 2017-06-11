@@ -27,22 +27,48 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="xIZ-e9-Mgy">
-                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="xIZ-e9-Mgy">
+                                            <rect key="frame" x="8" y="8" width="73.5" height="73.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="73.5" id="Iuo-AS-5wy"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qsy-nO-b2A">
-                                            <rect key="frame" x="98" y="8" width="269" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qsy-nO-b2A">
+                                            <rect key="frame" x="98" y="8.5" width="42" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gTc-d3-nK6" customClass="RatingControlView" customModule="FoodTrackerExample" customModuleProvider="target">
-                                            <rect key="frame" x="98" y="37" width="252" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gTc-d3-nK6" customClass="RatingControlView" customModule="FoodTrackerExample" customModuleProvider="target">
+                                            <rect key="frame" x="98" y="37" width="240" height="44"/>
                                         </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="gTc-d3-nK6" secondAttribute="trailing" id="0OR-52-MNN"/>
+                                        <constraint firstItem="gTc-d3-nK6" firstAttribute="leading" secondItem="xIZ-e9-Mgy" secondAttribute="trailing" constant="16.5" id="0cp-eM-sLE"/>
+                                        <constraint firstItem="xIZ-e9-Mgy" firstAttribute="top" secondItem="TpA-hQ-24d" secondAttribute="topMargin" id="2lt-sg-tDR"/>
+                                        <constraint firstItem="xIZ-e9-Mgy" firstAttribute="leading" secondItem="TpA-hQ-24d" secondAttribute="leadingMargin" id="4VD-Gu-Xo3"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Qsy-nO-b2A" secondAttribute="trailing" id="E8R-8P-5zn"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="gTc-d3-nK6" secondAttribute="trailing" id="M9n-gV-Ubj"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="gTc-d3-nK6" secondAttribute="bottom" id="VSj-CD-dqJ"/>
+                                        <constraint firstItem="Qsy-nO-b2A" firstAttribute="leading" secondItem="xIZ-e9-Mgy" secondAttribute="trailing" constant="16.5" id="fco-er-2h0"/>
+                                        <constraint firstItem="gTc-d3-nK6" firstAttribute="top" secondItem="Qsy-nO-b2A" secondAttribute="bottom" constant="8" symbolic="YES" id="hau-Pi-RsJ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="xIZ-e9-Mgy" secondAttribute="bottom" id="oM9-2A-nDj"/>
+                                        <constraint firstAttribute="trailing" secondItem="gTc-d3-nK6" secondAttribute="trailing" id="uB1-CZ-3St"/>
+                                        <constraint firstItem="Qsy-nO-b2A" firstAttribute="top" secondItem="TpA-hQ-24d" secondAttribute="topMargin" id="ybg-jf-fYj"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="0OR-52-MNN"/>
+                                            <exclude reference="uB1-CZ-3St"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="widthClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="0OR-52-MNN"/>
+                                            <exclude reference="uB1-CZ-3St"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="Qsy-nO-b2A" id="rWi-Nx-lQb"/>
@@ -103,7 +129,7 @@
                                             <outletCollection property="gestureRecognizers" destination="4ww-cQ-GAQ" appends="YES" id="fJF-oz-VV6"/>
                                         </connections>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Sf-ff-0zE" customClass="RatingControlView" customModule="FoodTrackerExample" customModuleProvider="target">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Sf-ff-0zE" customClass="RatingControlView" customModule="FoodTrackerExample" customModuleProvider="target">
                                         <rect key="frame" x="45.5" y="380" width="252" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="5Sf-ff-0zE" secondAttribute="height" multiplier="252:44" id="u2m-cd-D1y"/>
@@ -112,7 +138,6 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="3UB-Cl-4cp" secondAttribute="trailing" id="gbH-ow-2XB"/>
-                                    <constraint firstItem="5Sf-ff-0zE" firstAttribute="leading" secondItem="Db1-aj-JHy" secondAttribute="leading" constant="46" id="pU0-oH-JNa"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -192,7 +217,6 @@
         <!--Navigation Controller-->
         <scene sceneID="jpb-fW-8hU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="X85-ic-yTS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xdl-WJ-MHe" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iIK-QD-FxN">
@@ -201,6 +225,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X85-ic-yTS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2882.4000000000001" y="824.43778110944538"/>
         </scene>
