@@ -114,12 +114,38 @@ class MealTableViewController: UITableViewController {
         cell.nameLabel.text = meal.name
         cell.photoImageView.image = meal.photo
         cell.ratingControlView.rating = meal.rating
+        cell.contentView.backgroundColor = UIColor.white
+        cell.backgroundColor = UIColor.white
+        cell.backgroundView?.backgroundColor = UIColor.white
+        cell.selectedBackgroundView?.backgroundColor = UIColor.white
         
-//         Configure the cell...
-
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath);
+        cell?.contentView.backgroundColor = UIColor.white
+        cell?.backgroundColor = UIColor.white
+        cell?.backgroundView?.backgroundColor = UIColor.white
+        cell?.selectedBackgroundView?.backgroundColor = UIColor.white
 
+    }
+    
+    override func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath);
+        cell?.contentView.backgroundColor = UIColor.white
+        cell?.backgroundColor = UIColor.white
+        cell?.backgroundView?.backgroundColor = UIColor.white
+        cell?.selectedBackgroundView?.backgroundColor = UIColor.white
+    }
+    
+    override func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath);
+        cell?.contentView.backgroundColor = UIColor.white
+        cell?.backgroundColor = UIColor.white
+        cell?.backgroundView?.backgroundColor = UIColor.white
+        cell?.selectedBackgroundView?.backgroundColor = UIColor.white
+    }
     
     
     // Override to support conditional editing of the table view.
